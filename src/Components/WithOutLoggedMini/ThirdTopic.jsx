@@ -19,13 +19,13 @@ export default function ThirdTopic() {
       <ThirdButton  text="More"/>
     </Flex>
      
-     <div>
+     <Flex className=" mt-5 justify-between">
         <Images src={musicOne} alt={musicOne} />
         <Images src={musicTwo} alt={musicTwo} />
         <Images src={musicThree} alt={musicThree} />
         <Images src={musicFour} alt={musicFour} />
         <Images src={musicFive} alt={musicFive} />
-     </div>
+     </Flex>
 
  </div>
   )
