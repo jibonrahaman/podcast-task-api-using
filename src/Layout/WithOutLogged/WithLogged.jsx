@@ -7,6 +7,7 @@ import { IoSettings } from "react-icons/io5";
 import Svg from '../../Svg/Svg';
 import FirstTopic from '../../Components/WithOutLoggedMini/FirstTopic';
 import SecondTopic from '../../Components/WithOutLoggedMini/SecondTopic';
+import ThirdTopic from '../../Components/WithOutLoggedMini/ThirdTopic';
 
 //    with out login page ------------
 function WithLogged() {
@@ -62,6 +63,7 @@ function WithLogged() {
       <div className=' bg-[#191919] w-full px-16'>
         <FirstTopic/>
         <SecondTopic />
+        <ThirdTopic />
       </div>
      </Flex>
       
