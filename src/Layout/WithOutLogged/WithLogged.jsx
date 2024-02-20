@@ -16,7 +16,7 @@ function WithLogged() {
      <div className="bg-[#3B3B3B] h-screen w-[15%] px-5 flex  flex-col gap-y-7 pt-10 text-white font-semibold text-xl">
         <div className=' flex flex-col gap-y-7'>
           <Images src={logo} />
-          <Flex className=" relative after:content-[''] after:w-12 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
+          <Flex className=" relative after:content-[''] after:w-10 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
             <h2>Menu</h2>
           </Flex>
 
@@ -35,7 +35,7 @@ function WithLogged() {
           </Flex>
         </div>
         <div className=' flex flex-col gap-y-7 mt-20'>
-          <Flex className=" relative after:content-[''] after:w-12 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
+          <Flex className=" relative after:content-[''] after:w-10 after:absolute after:top-4 after:right-2 after:h-[1px] after:bg-white">
             <h2>My Playlist</h2>
           </Flex>
 
