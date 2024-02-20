@@ -11,7 +11,7 @@ export default function SecondTopic() {
                     <p>Top play music station</p>
                     <h2 className=" text-2xl my-3">The Dark Side of Music: Unveiling Its Negative Effects</h2>
                     <p className=" w-[50%] my-3 text-sm font-medium">Music, often regarded as a universal language, possesses a profound impact on individuals and societies alike. While it has long been celebrated for its ability to evoke emotions, foster connections, and uplift spirits, the flip side of the melody reveals a spectrum of adverse effects that are often overlooked</p>
-                    <button className=" px-6 py-1 bg-[#11343c] rounded-xl">For You?</button>
+                    <button className=" px-6 py-1 bg-[#11343c] rounded-xl ">For You?</button>
                 </div>
             </div>
 
