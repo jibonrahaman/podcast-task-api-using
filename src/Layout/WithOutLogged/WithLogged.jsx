@@ -59,7 +59,7 @@ function WithLogged() {
         </div>
       </div>
       {/* sidebar design  */}
-      <div className=' bg-[#191919] w-full px-10'>
+      <div className=' bg-[#191919] w-full px-16'>
         <FirstTopic/>
         <SecondTopic />
       </div>
