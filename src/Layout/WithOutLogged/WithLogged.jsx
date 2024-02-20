@@ -6,6 +6,7 @@ import { SiMusicbrainz } from "react-icons/si";
 import { IoSettings } from "react-icons/io5";
 import Svg from '../../Svg/Svg';
 import FirstTopic from '../../Components/WithOutLoggedMini/FirstTopic';
+import SecondTopic from '../../Components/WithOutLoggedMini/SecondTopic';
 
 //    with out login page ------------
 function WithLogged() {
@@ -60,6 +61,7 @@ function WithLogged() {
       {/* sidebar design  */}
       <div className=' bg-[#191919] w-full px-10'>
         <FirstTopic/>
+        <SecondTopic />
       </div>
      </Flex>
       
