@@ -24,10 +24,14 @@
     margin: auto;
     text-align: center;
   } */
-
+ .popup-content {
+   width: 25% !important;
+   background: #3b3b3b !important;
+   border: none !important;
+   padding: 30px 30px 20px  !important;
+  }
   .modal {
-    
-    background: #3b3b3b;
+   background: #3b3b3b;
   }
   .modal > .close {
     cursor: pointer;
