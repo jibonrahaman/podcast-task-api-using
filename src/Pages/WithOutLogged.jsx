@@ -5,7 +5,9 @@ import logo from '/public/images/logo.png'
 import { IoSettings } from "react-icons/io5";
 import { SiMusicbrainz } from "react-icons/si";
 import Svg from '../Svg/Svg'
+
 export default function WithOutLogged() {
+ 
   return (
     <div>
       <section className="withoutLogged   w-full">
@@ -20,7 +22,7 @@ export default function WithOutLogged() {
 
           <Flex className=" items-center gap-x-5">
             <FaHome />
-            <h2>Home</h2>
+            <h2  className ={`${window.document.location.pathname== '/logged' && ' text-green-600'} ${window.document.location.pathname== '/' && ' text-green-600'}`}>Home</h2>
           </Flex>
 
           <Flex className=" items-center  gap-x-5">
