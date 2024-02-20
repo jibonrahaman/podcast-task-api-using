@@ -5,15 +5,17 @@ import { FaHome } from "react-icons/fa";
 import { SiMusicbrainz } from "react-icons/si";
 import { IoSettings } from "react-icons/io5";
 import Svg from '../../Svg/Svg';
+import FirstTopic from '../../Components/WithOutLoggedMini/FirstTopic';
 
 //    with out login page ------------
 function WithLogged() {
   return (
     <section className="withoutLogged   w-full">
-      <div className="bg-[#3B3B3B] h-screen w-[15%] px-5 flex  flex-col gap-y-7 pt-10 text-white font-semibold text-xl">
+     <Flex>
+      {/* sidebar design  */}      
+     <div className="bg-[#3B3B3B] h-screen w-[15%] px-5 flex  flex-col gap-y-7 pt-10 text-white font-semibold text-xl">
         <div className=' flex flex-col gap-y-7'>
           <Images src={logo} />
-
           <Flex className=" relative after:content-[''] after:w-12 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
             <h2>Menu</h2>
           </Flex>
@@ -32,7 +34,6 @@ function WithLogged() {
             <h2>Settings</h2>
           </Flex>
         </div>
-
         <div className=' flex flex-col gap-y-7 mt-20'>
           <Flex className=" relative after:content-[''] after:w-12 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
             <h2>My Playlist</h2>
@@ -56,6 +57,12 @@ function WithLogged() {
           </Flex>
         </div>
       </div>
+      {/* sidebar design  */}
+      <div className=' bg-[#191919] w-full px-10'>
+        <FirstTopic/>
+      </div>
+     </Flex>
+      
     </section>
   )
 }
