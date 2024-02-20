@@ -12,8 +12,8 @@ export default function LoggedSecondTopic() {
             <h2 className=" text-5xl my-3">Premium Membership</h2>
             <p className=" w-[50%] my-3 text-sm font-medium">It is a long established fact that a is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
             <div className=" flex gap-x-6">
-            <button className="px-6 py-1 bg-[#015b69] rounded-xl ">Upgrade Now</button>
-            <button className="px-6 py-1 bg-[#015b69] rounded-xl "> Learn more</button>
+            <button className="px-6 py-1 bg-[#015b69] rounded-xl hover:bg-transparent border duration-300 ">Upgrade Now</button>
+            <button className="px-6 py-1 bg-[#015b69] rounded-xl hover:bg-transparent border duration-300 "> Learn more</button>
             </div>
         </div>
     </div>
