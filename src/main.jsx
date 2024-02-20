@@ -7,14 +7,26 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import WithLogged from './Layout/WithOutLogged/WithLogged.jsx';
+import Outlets from './RootLayout/Outlets';
+import HomePages from './Pages/HomePages';
+import Logged from './Pages/Logged';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route 
     path = '/'
-    element = {<WithLogged/>}
+    element = {<Outlets />}
     >
+     <Route
+     path='/'
+     element = {<HomePages />}
+     />
+     <Route
+     path='/logged'
+     element = {<Logged />}
+     />
+
     </Route>
   )
 );

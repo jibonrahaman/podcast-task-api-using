@@ -1,21 +1,17 @@
-import Images from '../../Components/Images'
-import logo from '../../../public/images/logo.png'
-import Flex from '../../Components/Flex'
 import { FaHome } from "react-icons/fa";
-import { SiMusicbrainz } from "react-icons/si";
+import Flex from "../Components/Flex";
+import Images from "../Components/Images";
+import logo from '/public/images/logo.png'
 import { IoSettings } from "react-icons/io5";
-import Svg from '../../Svg/Svg';
-import FirstTopic from '../../Components/WithOutLoggedMini/FirstTopic';
-import SecondTopic from '../../Components/WithOutLoggedMini/SecondTopic';
-import ThirdTopic from '../../Components/WithOutLoggedMini/ThirdTopic';
-
-//    with out login page ------------
-function WithLogged() {
+import { SiMusicbrainz } from "react-icons/si";
+import Svg from '../Svg/Svg'
+export default function WithOutLogged() {
   return (
-    <section className="withoutLogged   w-full">
+    <div>
+      <section className="withoutLogged   w-full">
      <Flex>
       {/* sidebar design  */}      
-     <div className="bg-[#3B3B3B] h-screen w-[15%] px-5 flex  flex-col gap-y-7 pt-10 text-white font-semibold text-xl">
+     <div className="bg-[#3B3B3B] h-screen  px-5 flex  flex-col gap-y-7 pt-10 text-white font-semibold text-xl">
         <div className=' flex flex-col gap-y-7'>
           <Images src={logo} />
           <Flex className=" relative after:content-[''] after:w-10 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
@@ -32,7 +28,8 @@ function WithLogged() {
             <h2>Podcast</h2>
           </Flex>
           <Flex className=" items-center gap-x-5">
-            <IoSettings />
+          <IoSettings />
+
             <h2>Settings</h2>
           </Flex>
         </div>
@@ -60,15 +57,10 @@ function WithLogged() {
         </div>
       </div>
       {/* sidebar design  */}
-      <div className=' bg-[#191919] w-full px-16'>
-        <FirstTopic/>
-        <SecondTopic />
-        <ThirdTopic />
-      </div>
+ 
      </Flex>
       
     </section>
+    </div>
   )
 }
-
-export default WithLogged
