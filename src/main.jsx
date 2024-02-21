@@ -10,6 +10,7 @@ import {
 import Outlets from './RootLayout/Outlets';
 import HomePages from './Pages/HomePages';
 import Logged from './Pages/Logged';
+import PodCast from './Pages/PodCast';
 
 
 const router = createBrowserRouter(
@@ -25,6 +26,10 @@ const router = createBrowserRouter(
      <Route
      path='/logged'
      element = {<Logged />}
+     />
+     <Route
+     path='/podcast'
+     element = {<PodCast/>}
      />
 
     </Route>

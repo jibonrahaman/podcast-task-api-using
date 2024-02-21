@@ -23,21 +23,21 @@ export default function WithOutLogged() {
 
           <Flex className=" items-center gap-x-5">
             <FaHome />
-            <h2  className ={`${window.document.location.pathname== '/logged' && ' text-green-600'} ${window.document.location.pathname== '/' && ' text-green-600'}`}>Home</h2>
+            <button  className ={`${window.document.location.pathname== '/logged' && ' text-green-600'} ${window.document.location.pathname== '/' && ' text-green-600'}`}>Home</button>
           </Flex>
 
           <Flex className=" items-center  gap-x-5">
             <SiMusicbrainz />
-            <h2>Podcast</h2>
+            <button>Podcast</button>
           </Flex>
           <Flex className=" items-center gap-x-5">
           <IoSettings />
-            <h2>Settings</h2>
+            <button>Settings</button>
           </Flex>
           
           <Flex className={`items-center gap-x-5 ${window.document.location.pathname== '/logged' ? " block" : " hidden"}`}>
           <GrLogout />
-            <h2>LogOut</h2>
+            <button>LogOut</button>
           </Flex>
         </div>
         <div className={`flex flex-col gap-y-8   ${window.document.location.pathname== '/logged' ? "mt-20" : " mt-28"}`}>
