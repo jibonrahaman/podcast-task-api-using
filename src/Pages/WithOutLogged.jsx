@@ -4,6 +4,7 @@ import Images from "../Components/Images";
 import logo from '/public/images/logo.png'
 import { IoSettings } from "react-icons/io5";
 import { SiMusicbrainz } from "react-icons/si";
+import { GrLogout } from "react-icons/gr";
 import Svg from '../Svg/Svg'
 
 export default function WithOutLogged() {
@@ -31,8 +32,12 @@ export default function WithOutLogged() {
           </Flex>
           <Flex className=" items-center gap-x-5">
           <IoSettings />
-
             <h2>Settings</h2>
+          </Flex>
+          
+          <Flex className={`items-center gap-x-5 ${window.document.location.pathname== '/logged' ? " block" : " hidden"}`}>
+          <GrLogout />
+            <h2>LogOut</h2>
           </Flex>
         </div>
         <div className=' flex flex-col gap-y-7 mt-20'>

@@ -1,13 +1,13 @@
 import LoggedFirstTopic from "../Components/Logged/LoggedFirstTopic";
 import LoggedSecondTopic from "../Components/Logged/LoggedSecondTopic";
-import ThirdTopic from "../Components/WithOutLoggedMini/ThirdTopic";
+import LoggedThirdTopic from "../Components/Logged/LoggedThirdTopic";
 
 export default function Logged() {
   return (
     <div className=' bg-[#191919] w-full px-16'>
       <LoggedFirstTopic />
       <LoggedSecondTopic />
-      <ThirdTopic />
+      < LoggedThirdTopic/>
     </div>
   )
 }
