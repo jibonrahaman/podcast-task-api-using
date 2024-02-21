@@ -14,6 +14,14 @@ const handleSignInPopup = () =>{
 const handleSignUpPopup = () =>{
   setSignupPopup(true)
 }
+const handleCloseSignIn = () =>{
+  setSignInPopup(false)
+  setSignupPopup(true)
+}
+const handleCloseSignUp = () =>{
+  setSignInPopup(true)
+  setSignupPopup(false)
+}
 
 
   return (
@@ -43,7 +51,7 @@ const handleSignUpPopup = () =>{
             <p className='text-xl '>Password:</p>
             <input type="text" placeholder='enter your password' className='px-16 py-1 rounded-md bg-black outline-none  mt-1' />
             <button  className='my-5 px-10 py-2 bg-black rounded-xl duration-300 hover:bg-[#262525]'>Sign in</button>
-            <p className='text-lg mt-3'>Don’t have an account? <button className='text-red-700 text-center'>Create an account</button></p>
+            <p className='text-lg mt-3'>Don’t have an account? <button onClick={handleCloseSignIn} className='text-red-700 text-center'>Create an account</button></p>
           </div>
         </div>
         </div>
@@ -64,7 +72,7 @@ const handleSignUpPopup = () =>{
             <p className='text-xl '>Password:</p>
             <input type="text" placeholder='enter your password' className='px-16 py-1 rounded-md bg-black outline-none  mt-1' />
             <button  className='my-5 px-10 py-2 bg-black rounded-xl duration-300 hover:bg-[#262525]'>Create an account</button>
-            <p className='text-lg mt-3'> Have account? Sign in  account  <button className='text-red-700 text-center'> signin</button></p>
+            <p className='text-lg mt-3'> Have account? Sign in  account  <button onClick={handleCloseSignUp} className='text-red-700 text-center'> signin</button></p>
           </div>
         </div>
         </div>
