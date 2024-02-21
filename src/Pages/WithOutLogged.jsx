@@ -14,8 +14,8 @@ export default function WithOutLogged() {
       <section className="withoutLogged   w-full">
      <Flex>
       {/* sidebar design  */}      
-     <div className="bg-[#3B3B3B] h-screen  px-5 flex  flex-col gap-y-7 pt-10 text-white font-semibold text-xl">
-        <div className=' flex flex-col gap-y-7'>
+     <div className="bg-[#3B3B3B] h-screen  px-5 flex  flex-col gap-y-7 pt-6 text-white font-semibold text-xl">
+        <div className=' flex flex-col gap-y-5'>
           <Images src={logo} />
           <Flex className=" relative after:content-[''] after:w-10 after:absolute after:top-4 after:right-8 after:h-[1px] after:bg-white">
             <h2>Menu</h2>
@@ -40,7 +40,7 @@ export default function WithOutLogged() {
             <h2>LogOut</h2>
           </Flex>
         </div>
-        <div className=' flex flex-col gap-y-7 mt-20'>
+        <div className={`flex flex-col gap-y-8   ${window.document.location.pathname== '/logged' ? "mt-20" : " mt-28"}`}>
           <Flex className=" relative after:content-[''] after:w-10 after:absolute after:top-4 after:right-2 after:h-[1px] after:bg-white">
             <h2>My Playlist</h2>
           </Flex>
