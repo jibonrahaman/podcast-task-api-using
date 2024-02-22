@@ -2,6 +2,8 @@ import { useState } from "react"
 import Images from "../Images"
 import logo from '/public/images/logo.png'
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { userLoginInfo } from "../../Slices/UserSlices";
 
 
 function FirstTopic({ className }) {
@@ -10,7 +12,8 @@ function FirstTopic({ className }) {
   const [singUpEmail, setsingUpEmail] = useState('')
   const [singUpPass, setsingUpPass] = useState('')
   const [singUpEmailError, setsingUpEmailError] = useState('')
-  const [singUpPassError, setsingUpPassError] = useState('')
+  const [singUpPassError, setsingUpPassError] = useState('');
+  const dispatch = useDispatch();
   const handleChangeSignUpEmail = (e) => {
     setsingUpEmail(e.target.value);
     setsingUpEmailError('');
@@ -44,9 +47,15 @@ function FirstTopic({ className }) {
     if (!singUpPass) {
       setsingUpPassError("Password required")
     }
- if(singUpEmail && singUpPass && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(singUpEmail))){
-  console.log("succes");
- }
+    // && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(singUpEmail))
+    if (singUpEmail && singUpPass) {
+      dispatch(userLoginInfo([{
+       email :singUpEmail,
+       password: singUpPass
+      }]))
+    }
+    setsingUpEmail('');
+    setsingUpPass('')
 
   }
 
