@@ -10,7 +10,15 @@ export const UserSlice = createSlice({
   reducers: {
    userLoginInfo: (state,action) =>{
     if(state.userInfo.length > 0){
-console.log("okk");
+      let arr = []
+       state.userInfo.map((item)=>{
+       if(item.email == action.payload.email){
+         arr.push(item.email)
+       }        
+       })
+       if(arr.indexOf(action.payload.email) == -1){
+        state.userInfo.push(action.payload)
+       }
     }else{
       state.userInfo.push(action.payload)
     }
