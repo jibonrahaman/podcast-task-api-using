@@ -7,18 +7,18 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 function FirstTopic({ className }) {
   const [SignInPopup, setSignInPopup] = useState(false)
   const [SignupPopup, setSignupPopup] = useState(false)
-  const [singUpEmail,setsingUpEmail] =useState('')
-  const [singUpPass,setsingUpPass] =useState('')
-    const [singUpEmailError,setsingUpEmailError] =useState('')
-  const [singUpPassError,setsingUpPassError] =useState('')
-const handleChangeSignUpEmail = (e) =>{
-  setsingUpEmail(e.target.value);
-  setsingUpEmailError('');
-}
-const handleChangeSignUpPass = (e) =>{
-  setsingUpPass(e.target.value)
-  setsingUpPassError('');
-}
+  const [singUpEmail, setsingUpEmail] = useState('')
+  const [singUpPass, setsingUpPass] = useState('')
+  const [singUpEmailError, setsingUpEmailError] = useState('')
+  const [singUpPassError, setsingUpPassError] = useState('')
+  const handleChangeSignUpEmail = (e) => {
+    setsingUpEmail(e.target.value);
+    setsingUpEmailError('');
+  }
+  const handleChangeSignUpPass = (e) => {
+    setsingUpPass(e.target.value)
+    setsingUpPassError('');
+  }
   const handleSignInPopup = () => {
     setSignInPopup(true)
   }
@@ -33,21 +33,33 @@ const handleChangeSignUpPass = (e) =>{
     setSignInPopup(true)
     setSignupPopup(false)
   }
- const handleSubmitSignUp = () =>{
-    if(!singUpEmail){
+
+  const handleSubmitSignUp = () => {
+    if (!singUpEmail) {
       setsingUpEmailError("Email required")
+    } else {
+      if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(singUpEmail))
+        setsingUpEmailError("Enter Your Valid Email")
     }
-      if(!singUpPass){
+    if (!singUpPass) {
       setsingUpPassError("Password required")
     }
-
+ if(singUpEmail && singUpPass && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(singUpEmail))){
+  console.log("succes");
  }
+
+  }
+
+
+
+
+
 
   return (
     <section className=' relative'>
-        
+
       <div className={`text-white flex justify-between pt-6 ${className}`}>
-              <h2 className=" text-3xl font-semibold"> Welcome to fauget music services</h2>
+        <h2 className=" text-3xl font-semibold"> Welcome to fauget music services</h2>
         <div className=" flex  gap-x-20 ">
           <button onClick={handleSignInPopup} className="px-10 py-2 cursor-pointer text-center duration-300 rounded-xl bg-black hover:bg-[#434040]">Sign in </button>
           <button onClick={handleSignUpPopup} className=" px-10 py-2 cursor-pointer text-center duration-300 rounded-xl bg-[#434040] hover:bg-black">Sign up</button>
@@ -66,10 +78,10 @@ const handleChangeSignUpPass = (e) =>{
               <h2 className='text-white text-2xl'>Sign</h2>
               <div className='text-white'>
                 <p className='text-xl mt-3 '>Email:</p>
-                <input type="text" placeholder='enter your email' className='px-16 py-1 rounded-md bg-black outline-none mt-1  mb-5'/>
-                 <p className='text-xl '>Password:</p>
+                <input type="text" placeholder='enter your email' className='px-16 py-1 rounded-md bg-black outline-none mt-1  mb-5' />
+                <p className='text-xl '>Password:</p>
                 <input type="text" placeholder='enter your password' className='px-16 py-1 rounded-md bg-black outline-none  mt-1' />
-                 <button className='my-5 px-10 py-2 bg-black rounded-xl duration-300 hover:bg-[#262525]'>Sign in</button>
+                <button className='my-5 px-10 py-2 bg-black rounded-xl duration-300 hover:bg-[#262525]'>Sign in</button>
                 <p className='text-lg mt-3'>Don’t have an account? <button onClick={handleCloseSignIn} className='text-red-700 text-center'>Create an account</button></p>
               </div>
             </div>
