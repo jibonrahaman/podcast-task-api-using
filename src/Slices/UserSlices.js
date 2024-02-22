@@ -2,14 +2,18 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     //   userInfo:localStorage.getItem('userLoginInfo') ? JSON.parse(localStorage.getItem('userLoginInfo')) : null,
-      userInfo: null,
+      userInfo: [],
     }
 export const UserSlice = createSlice({
     name:"user",
   initialState,
   reducers: {
    userLoginInfo: (state,action) =>{
-    state.userInfo=action.payload
+    if(state.userInfo.length > 0){
+console.log("okk");
+    }else{
+      state.userInfo.push(action.payload)
+    }
    }
   },
 })

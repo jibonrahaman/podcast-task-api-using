@@ -49,10 +49,10 @@ function FirstTopic({ className }) {
     }
     // && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(singUpEmail))
     if (singUpEmail && singUpPass) {
-      dispatch(userLoginInfo([{
+      dispatch(userLoginInfo({
        email :singUpEmail,
        password: singUpPass
-      }]))
+      }))
     }
     setsingUpEmail('');
     setsingUpPass('')
