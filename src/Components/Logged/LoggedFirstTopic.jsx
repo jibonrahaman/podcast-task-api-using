@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineKeyboardVoice } from "react-icons/md";
 
+
 function LoggedFirstTopic({className}) {
+ 
   return (
  <section>
      <div className={`text-white flex justify-between  pt-6 ${className}`}>

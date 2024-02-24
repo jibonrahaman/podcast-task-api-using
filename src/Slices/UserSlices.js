@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    //   userInfo:localStorage.getItem('userLoginInfo') ? JSON.parse(localStorage.getItem('userLoginInfo')) : null,
-      userInfo: [],
+   
+  userInfo: localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : [],
     }
 export const UserSlice = createSlice({
     name:"user",
@@ -18,9 +18,11 @@ export const UserSlice = createSlice({
        })
        if(arr.indexOf(action.payload.email) == -1){
         state.userInfo.push(action.payload)
+        localStorage.setItem('userDetails', JSON.stringify(state.userInfo));
        }
     }else{
-      state.userInfo.push(action.payload)
+      state.userInfo.push(action.payload);
+      localStorage.setItem('userDetails', JSON.stringify(state.userInfo));
     }
    }
   },
