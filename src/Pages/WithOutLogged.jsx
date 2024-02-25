@@ -6,9 +6,11 @@ import { IoSettings } from "react-icons/io5";
 import { SiMusicbrainz } from "react-icons/si";
 import { GrLogout } from "react-icons/gr";
 import Svg from '../Svg/Svg'
+import { Link, useLocation } from "react-router-dom";
 
 export default function WithOutLogged() {
- 
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <div>
       <section className="withoutLogged   w-full">
@@ -21,21 +23,26 @@ export default function WithOutLogged() {
             <h2>Menu</h2>
           </Flex>
 
-          <Flex className=" items-center gap-x-5">
+          <Link to='/logged'>
+          <Flex className={`items-center gap-x-5 ${location.pathname === '/logged' || location.pathname === '/' ? 'text-green-600' : ''}`}>
             <FaHome />
-            <button  className ={`${window.document.location.pathname== '/logged' && ' text-green-600'} ${window.document.location.pathname== '/' && ' text-green-600'}`}>Home</button>
+            <button>Home</button>
           </Flex>
+          </Link>
 
-          <Flex className=" items-center  gap-x-5">
+          <Link to='/podcast'>
+          <Flex className={`items-center gap-x-5 ${location.pathname === '/podcast' ? 'text-green-600' : ''}`}>
             <SiMusicbrainz />
-            <button>Podcast</button>
+            <button> Podcast</button>
           </Flex>
+          </Link>
+
           <Flex className=" items-center gap-x-5">
           <IoSettings />
             <button>Settings</button>
           </Flex>
           
-          <Flex className={`items-center gap-x-5 ${window.document.location.pathname== '/logged' ? " block" : " hidden"}`}>
+          <Flex className={`items-center gap-x-5 ${window.document.location.pathname == '/'  ? "hidden " : " block"}`}>
           <GrLogout />
             <button>LogOut</button>
           </Flex>
