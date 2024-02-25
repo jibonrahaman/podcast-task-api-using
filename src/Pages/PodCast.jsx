@@ -1,18 +1,34 @@
 import { FaSearch } from "react-icons/fa";
 import { MdOutlineKeyboardVoice } from "react-icons/md";
-import musicOne from '/public/images/music1.png';
-import musicTwo from '/public/images/music2.png';
-import musicThree from '/public/images/music3.png';
-import musicFour from '/public/images/music4.png';
-import musicFive from '/public/images/music5.png';
 import { FaRegPlayCircle } from "react-icons/fa";
 import Flex from "../Components/Flex";
 import Images from "../Components/Images";
 import ThirdButton from "../Components/ThirdButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImagesData from "../ImagesData";
-export default function PodCast() {
+export default async function PodCast() {
   const [data, setData] = useState(ImagesData);
+  const [Datas,setDatas] =useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+  useEffect(()=>{  
+  const fetchData = async ()=>{
+    try{
+    const response = await fetch('https://api.lyrics.ovh/suggest/e');
+    if(response.ok){
+      throw new Error('Network response was not ok');
+    }
+    const jsonData = await response.json();
+    setDatas(jsonData)
+    setLoading(false); 
+    
+    }catch(error){
+      console.error('Error fetching data:', error);
+      setLoading(false); 
+    }
+  }
+  fetchData();
+  }, [])
+
   return (
     <section className=' bg-[#191919] w-full px-16 '>
       <div className={`text-white flex justify-between  pt-6 `}>
