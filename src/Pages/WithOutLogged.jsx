@@ -47,7 +47,7 @@ export default function WithOutLogged() {
             <button>LogOut</button>
           </Flex>
         </div>
-        <div className={`flex flex-col gap-y-8   ${window.document.location.pathname== '/logged' ? "mt-20" : " mt-28"}`}>
+        <div className={`flex flex-col gap-y-8   ${window.document.location.pathname== '/logged' ? "mt-20" : " mt-20"}`}>
           <Flex className=" relative after:content-[''] after:w-10 after:absolute after:top-4 after:right-2 after:h-[1px] after:bg-white">
             <h2>My Playlist</h2>
           </Flex>
