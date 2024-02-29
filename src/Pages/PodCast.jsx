@@ -38,7 +38,7 @@ export default function PodCast() {
             showApi.data && showApi.data.map((item, index) => {
               return <div key={index} className="mt-10 relative">
                 <div className=" relative"  >
-                  <Images src={item.artist.picture} alt={item.artist} />
+                  <Images src={item.album.cover} alt={item.album.cover} />
                   <button onClick={() => handleMusicSelection(index)}>
                     <FaRegPlayCircle className=" absolute  text-white  top-10 left-[50%] text-5xl translate-x-[-50%] " />
                   </button>
@@ -53,8 +53,12 @@ export default function PodCast() {
       {/* Audio player */}
       {
         audioSrc && 
-        <div className=" absolute top-[20%] left-[50%] translate-x-[-50%] w-[40%] h-[200px]  bg-white/70 backdrop-blur-sm">
-        <img src={audioSrc.album.cover} alt={audioSrc.album.cover} className=" w-full h-full object-cover" />
+        <div className=" absolute bottom-[5%] left-[50%] translate-x-[-50%] w-[40%] h-[200px]  bg-white/70 backdrop-blur-sm">
+        <div  className=" w-full h-full relative " >
+        <img src={audioSrc.artist.picture} alt={audioSrc.artist.picture} className=" w-full h-full object-cover"/>
+        <div className=" w-full h-full bg-black/60 top-0 left-0 absolute"/>
+        </div>
+        <audio controls src={audioSrc.preview} className=" absolute  bottom-5 left-[50%] translate-x-[-50%] w-[50%] h-[20%]"/>
       </div>
       }
     </section>
