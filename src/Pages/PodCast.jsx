@@ -14,7 +14,9 @@ export default function PodCast() {
   .then(res => res.json())
   .then(data =>setshowApi(data))
   }, []);
-  console.log(showApi);
+  const handleMusicSelection = ()=>{
+    console.log("data");
+  }
   return (
     <section className=' bg-[#191919] w-full px-16 '>
     <div className={`text-white flex justify-between  pt-6 `}>
@@ -28,27 +30,25 @@ export default function PodCast() {
 
     <div className="overflow-y-scroll w-full h-[600px]">
     {showApi.data && showApi.data.map((item) => {
-    console.log(item);
-    // return your JSX for each item here
+    console.log(item.artist);
+   
   })}
-      {/* {
-        data.map((item) => {
-          const { id, title, imgs } = item
+     <Flex className=" flex-wrap gap-x-10">
+     {
+        showApi.data && showApi.data.map((item,id) => {
+          // const { id, title, imgs } = item
           return <div key={id} className="mt-10 ">
-            <ThirdButton text={title} />
-            <Flex className=" mt-5 justify-between">
-              {
-                imgs.map((items, index) => (
-                  <div key={index} className=" relative">
-                    <Images src={items} alt={items} />
-                    <FaRegPlayCircle className=" absolute top-[50%] text-white left-[50%] translate-x-[-50%] translate-y-[-50%] text-5xl" />
+            {/* <ThirdButton text={title} /> */}
+                  <div className=" relative"  >
+                <Images src={item.artist.picture} alt={item.artist} />
+                  <button onClick={()=>handleMusicSelection(item)}>
+                  <FaRegPlayCircle  className=" absolute  text-white  top-10 left-[50%] text-5xl translate-x-[-50%] " />
+                  </button>
                   </div>
-                ))
-              }
-            </Flex>
           </div>
         })
-      } */}
+      }
+     </Flex>
     
     </div>
   </section>
