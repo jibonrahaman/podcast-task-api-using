@@ -9,16 +9,19 @@ import ThirdButton from '../Components/ThirdButton';
 export default function PodCast() {
   const [data,setdata] =useState(ImagesData)
   const [showApi,setshowApi] =useState([]);
+  const [audioSrc, setAudioSrc] = useState("");
   useEffect(()=>{
   fetch('https://api.lyrics.ovh/suggest/e')
   .then(res => res.json())
   .then(data =>setshowApi(data))
   }, []);
-  const handleMusicSelection = ()=>{
-    console.log("data");
+  
+  const handleMusicSelection = (index)=>{
+   setAudioSrc(showApi.data[index].preview);
   }
+
   return (
-    <section className=' bg-[#191919] w-full px-16 '>
+    <section className=' bg-[#191919] w-full px-16 relative'>
     <div className={`text-white flex justify-between  pt-6 `}>
       <h2 className=" text-3xl font-semibold"> Welcome,claudia Alvies</h2>
       <div className=" relative">
@@ -28,29 +31,28 @@ export default function PodCast() {
       </div>
     </div>
 
-    <div className="overflow-y-scroll w-full h-[600px]">
-    {showApi.data && showApi.data.map((item) => {
-    console.log(item.artist);
-   
-  })}
+    <div className=" w-full h-[600px]">
      <Flex className=" flex-wrap gap-x-10">
      {
-        showApi.data && showApi.data.map((item,id) => {
-          // const { id, title, imgs } = item
-          return <div key={id} className="mt-10 ">
-            {/* <ThirdButton text={title} /> */}
-                  <div className=" relative"  >
-                <Images src={item.artist.picture} alt={item.artist} />
-                  <button onClick={()=>handleMusicSelection(item)}>
-                  <FaRegPlayCircle  className=" absolute  text-white  top-10 left-[50%] text-5xl translate-x-[-50%] " />
-                  </button>
-                  </div>
-          </div>
+        showApi.data && showApi.data.map((item,index) => {
+          return <div key={index} className="mt-10 relative">
+          <div className=" relative"  >
+        <Images src={item.artist.picture} alt={item.artist} />
+          <button onClick={()=>handleMusicSelection(index)}>
+          <FaRegPlayCircle  className=" absolute  text-white  top-10 left-[50%] text-5xl translate-x-[-50%] " />
+          </button>
+          </div>  
+           </div>
+      
         })
       }
      </Flex>
-    
+   
     </div>
+     {/* Audio player */}
+     <div className=" absolute">
+     {audioSrc && <audio controls src={audioSrc}/>}
+     </div>
   </section>
   )
 }
