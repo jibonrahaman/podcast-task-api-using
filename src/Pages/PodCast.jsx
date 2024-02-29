@@ -6,10 +6,13 @@ import { FaRegPlayCircle } from "react-icons/fa";
 import Flex from '../Components/Flex';
 import Images from '../Components/Images';
 import ThirdButton from '../Components/ThirdButton';
+import { GiCancel } from "react-icons/gi";
+
 export default function PodCast() {
   const [data, setdata] = useState(ImagesData)
   const [showApi, setshowApi] = useState([]);
   const [audioSrc, setAudioSrc] = useState(null);
+  const [open,setOpen] =useState(true)
   useEffect(() => {
     fetch('https://api.lyrics.ovh/suggest/e')
       .then(res => res.json())
@@ -18,7 +21,7 @@ export default function PodCast() {
 
   const handleMusicSelection = (index) => {
     setAudioSrc(showApi.data[index]);
-    console.log(showApi.data[index]);
+   
   }
 
   return (
@@ -44,7 +47,6 @@ export default function PodCast() {
                   </button>
                 </div>
               </div>
-
             })
           }
         </Flex>
@@ -52,13 +54,16 @@ export default function PodCast() {
       </div>
       {/* Audio player */}
       {
-        audioSrc && 
+        audioSrc  && 
         <div className=" absolute bottom-[5%] left-[50%] translate-x-[-50%] w-[40%] h-[200px]  bg-white/70 backdrop-blur-sm">
         <div  className=" w-full h-full relative " >
         <img src={audioSrc.artist.picture} alt={audioSrc.artist.picture} className=" w-full h-full object-cover"/>
         <div className=" w-full h-full bg-black/60 top-0 left-0 absolute"/>
         </div>
         <audio controls src={audioSrc.preview} className=" absolute  bottom-5 left-[50%] translate-x-[-50%] w-[50%] h-[20%]"/>
+        <button onClick={()=>setAudioSrc(false)}  className=" text-white absolute  top-0 right-0 text-3xl" >
+        <GiCancel />
+        </button>
       </div>
       }
     </section>
